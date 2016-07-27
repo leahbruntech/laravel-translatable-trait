@@ -51,7 +51,7 @@ trait TranslatableTrait
 
     /**
      * Create the event listeners for the saving and saved events
-     * This lets us save revisions whenever a save is made, no matter the
+     * This lets us save translation whenever a save is made, no matter the
      * http method.
      *
      */
@@ -78,7 +78,7 @@ trait TranslatableTrait
     /**
      * @return mixed
      */
-    public function revisionHistory()
+    public function translations()
     {
         return $this->morphMany('\Leahbruntech\Translatable\Translation', 'translatable');
     }
@@ -134,8 +134,8 @@ trait TranslatableTrait
 
         foreach ($changes_to_record as $key => $change) {
             $translations[] = [
-                'revisionable_type'     => get_class($this),
-                'revisionable_id'       => $this->getKey(),
+                'translatable_type'     => get_class($this),
+                'translatable_id'       => $this->getKey(),
                 'key'                   => $key,
                 'name'                  => 'name',
                 'content'               => 'content',
@@ -157,9 +157,9 @@ trait TranslatableTrait
     public function postCreate()
     {
         $translations[] = [
-            'revisionable_type'     => get_class($this),
-            'revisionable_id'       => $this->getKey(),
-            'key'                   => $key,
+            'translatable_type'     => get_class($this),
+            'translatable_id'       => $this->getKey(),
+            'key'                   => 'created_at',
             'name'                  => 'name',
             'content'               => 'content',
             'locale'                => 'locale',

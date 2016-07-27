@@ -67,7 +67,7 @@ class Translatable extends Eloquent
     /**
      * @return mixed
      */
-    public function revisionHistory()
+    public function translations()
     {
         return $this->morphMany('\Leahbruntech\Translatable\Translation', 'translatable');
     }
@@ -109,8 +109,8 @@ class Translatable extends Eloquent
 
         foreach ($changes_to_record as $key => $change) {
             $translations[] = [
-                'revisionable_type'     => get_class($this),
-                'revisionable_id'       => $this->getKey(),
+                'translatable_type'     => get_class($this),
+                'translatable_id'       => $this->getKey(),
                 'key'                   => $key,
                 'name'                  => 'name',
                 'content'               => 'content',
@@ -132,9 +132,9 @@ class Translatable extends Eloquent
     public function postCreate()
     {
         $translations[] = [
-            'revisionable_type'     => get_class($this),
-            'revisionable_id'       => $this->getKey(),
-            'key'                   => $key,
+            'translatable_type'     => get_class($this),
+            'translatable_id'       => $this->getKey(),
+            'key'                   => 'created_at',
             'name'                  => 'name',
             'content'               => 'content',
             'locale'                => 'locale',
