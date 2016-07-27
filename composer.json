@@ -1,9 +1,9 @@
 {
-    "name": "leahbruntech/laravel-translatableTrait",
+    "name": "leahbruntech/laravel-translatable-trait",
     "license": "MIT",
     "description": "Simple translation trait, created as a package for use with Laravel",
     "keywords": ["model", "laravel", "translation"],
-    "homepage": "https://github.com/leahbruntech/laravel-translatableTrait",
+    "homepage": "https://github.com/leahbruntech/laravel-translatable-trait",
     "authors": [
         {
             "name": "Leah Mae",
@@ -11,8 +11,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/leahbruntech/laravel-translatableTrait/issues",
-        "source": "https://github.com/leahbruntech/laravel-translatableTrait"
+        "issues": "https://github.com/leahbruntech/laravel-translatable-trait/issues",
+        "source": "https://github.com/leahbruntech/laravel-translatable-trait"
     },
     "require": {
         "php": ">=5.3.0",
@@ -23,7 +23,7 @@
             "src/migrations"
         ],
         "psr-0": {
-            "Leahbruntech\\Translatble": "src/"
+            "Leahbruntech\\Translatable": "src/"
         }
     }
 }
